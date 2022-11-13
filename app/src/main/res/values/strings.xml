@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">text recognisation</string>
+    <string name="take_image">take image</string>
+</resources>
