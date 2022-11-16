@@ -53,11 +53,11 @@ class  MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        inputImageButton.findViewById<MaterialButton>(R.id.inputImageButton)
-        textRecogniseButton.findViewById<MaterialButton>(R.id.textRecogniseButton)
-        imageIv.findViewById<ImageView>(R.id.imageIv)
-        recogniseTextEt.findViewById<EditText>(R.id.recogniseTextEt)
+        inputImageButton = findViewById(R.id.inputImageButton)
+        textRecogniseButton = findViewById(R.id.textRecogniseButton)
+        imageIv = findViewById(R.id.imageIv)
+        recogniseTextEt = findViewById(R.id.recogniseTextEt)
+         
 
         cameraPermission = arrayOf(android.Manifest.permission.CAMERA , android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
         storagePermission = arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -81,6 +81,7 @@ class  MainActivity : AppCompatActivity() {
                 recogniseTextFromImage()
             }
         }
+
 
     }
 
@@ -153,6 +154,7 @@ class  MainActivity : AppCompatActivity() {
     private fun pickImageGallery(){
         val intent = Intent(Intent.ACTION_PICK)
         intent.type ="image/*"
+        galleryActivityResultLauncher.launch(intent)
 
     }
     private val galleryActivityResultLauncher =
